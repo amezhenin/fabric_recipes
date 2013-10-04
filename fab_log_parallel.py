@@ -1,4 +1,4 @@
-# This recepie will read logs from several servers in parallel in real time
+# This recipe will read logs from several servers in parallel in real time
 # usage:
 # fab -f fab_log_parallel.py -R www log
 
@@ -8,7 +8,7 @@ env.roledefs = {
     # production servers
     'www': ['srv1.com', 'srv2.com']
 }
-    
+
 env.remote_interrupt = True
 env.LOG = '<path to log>'
     
