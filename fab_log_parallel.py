@@ -1,6 +1,8 @@
-# This recipe will read logs from several servers in parallel in real time
-# usage:
-# fab -f fab_log_parallel.py -R www log
+"""
+This recipe will read logs from several servers in parallel in real time
+usage:
+fab -f fab_log_parallel.py -R www log
+"""
 
 from fabric.api import env, task, sudo, settings, parallel
 
