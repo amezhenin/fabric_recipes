@@ -13,9 +13,10 @@ from fabric.api import env, task, sudo
 
 SERVICES = {
             'nginx': '/etc/init.d/nginx %s',
-            'mongo': '/etc/init.d/mongodb %s',
             'postgresql': '/etc/init.d/postgresql %s',
             'redis': '/etc/init.d/redis-server %s',
+            'supervisor': '/etc/init.d/supervisor %s',
+            'gunicorn': 'supervisorctl %s gunicorn',
             # other services
            }
 SERVICES_LIST = ['nginx',
