@@ -13,3 +13,7 @@ This recipe will help you to manage your services.
 
 This recipe will help you to setup(Debian, Ubuntu) and manage PostgreSQL (9.1).
 
+
+### TODO
+
+* command to add remote access to DB
