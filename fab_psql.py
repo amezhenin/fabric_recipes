@@ -38,6 +38,17 @@ def setup_postgresql():
     sudo("psql -c \"CREATE DATABASE karma WITH ENCODING='UTF8' OWNER=karma;\"",
          user='postgres')
 
+@task
+def grant_access(ip):
+    """
+    Grant access from IP-address to DB(pg_hba.conf). E.g. 12.23.34.45/32
+    """
+    sudo("cp /etc/postgresql/9.1/main/pg_hba.conf "\
+         "/etc/postgresql/9.1/main/pg_hba.conf.bak")
+    sudo("echo 'host all all %s  md5' "\
+         "| tee -a /etc/postgresql/9.1/main/pg_hba.conf" % (ip,))
+    sudo("/etc/init.d/postgresql restart")
+
 
 #===============================================================================
 # Reports
